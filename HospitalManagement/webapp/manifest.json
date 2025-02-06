@@ -1,0 +1,130 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "HospitalManagement",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.14.4",
+            "toolsId": "b0c8f089-8eee-4f99-9f52-95041d991fa3"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "HospitalManagement.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "HospitalManagement.i18n.i18n"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "HospitalManagement.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "login",
+                    "target": "login"
+                },
+                {
+                    "pattern": "home",
+                    "name": "home",
+                    "target": "home"
+                },
+                {
+                    "pattern": "hospital",
+                    "name": "hospital",
+                    "target": "hospital"
+                },
+                {
+                    "pattern": "createEmployee",
+                    "name": "createEmployee",
+                    "target": "createEmployee"
+                },
+                {
+                    "pattern": "employeeDetail/{employeeId}",
+                    "name": "employeeDetail",
+                    "target": "employeeDetail"
+                }
+            ],
+            "targets": {
+                "login": {
+                    "viewName": "Login",
+                    "viewLevel": 0
+                },
+                "home": {
+                    "viewName": "Home",
+                    "viewLevel": 1
+                },
+                "hospital": {
+                    "viewName": "hosp.hospital",
+                    "viewLevel": 2
+                },
+                "createEmployee": {
+                    "viewName": "hosp.CreateEmployee",
+                    "viewLevel": 3
+                },
+                "employeeDetail": {
+                    "viewName": "hosp.employeeDetail",
+                    "viewLevel": 4
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }
+    }
+}

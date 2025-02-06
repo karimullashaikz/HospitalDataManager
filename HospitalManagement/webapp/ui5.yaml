@@ -1,0 +1,15 @@
+specVersion: "2.0"
+metadata:
+  name: HospitalManagement
+type: application
+framework:
+  name: SAPUI5
+  version: "1.71.0"
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+        - path: /sap

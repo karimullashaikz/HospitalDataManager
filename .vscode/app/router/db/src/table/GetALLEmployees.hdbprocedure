@@ -1,0 +1,4 @@
+create PROCEDURE `GetAllEmployees`()
+BEGIN
+    SELECT * FROM employee;
+END

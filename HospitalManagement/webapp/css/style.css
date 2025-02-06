@@ -1,0 +1,12 @@
+.loginPage {
+    background-image: url('https://images.pexels.com/photos/7078666/pexels-photo-7078666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Make the panel more visible against the background */
+.loginPage .sapMPanel {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}

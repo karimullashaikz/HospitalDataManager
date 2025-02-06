@@ -1,0 +1,6 @@
+ PROCEDURE `UpdateEmployee`(IN empId INT, IN empName VARCHAR(100), IN empDesignation VARCHAR(100), IN empStatus VARCHAR(50))
+BEGIN
+    UPDATE employee 
+    SET name = empName, designation = empDesignation, status = empStatus
+    WHERE id = empId;
+END

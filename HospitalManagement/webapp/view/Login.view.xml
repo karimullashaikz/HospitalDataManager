@@ -1,0 +1,149 @@
+<!-- <mvc:View
+    controllerName="HospitalManagement.controller.Login"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <App>
+    
+        <Page title="Login Page" showHeader="true">
+            <FlexBox
+                height="100%"
+                alignItems="Center"
+                justifyContent="Center">
+                <Panel
+                    headerText="Login page" 
+                    width="400px"
+                    class="sapUiResponsiveMargin">
+                    <content>
+                    
+                        <VBox class="sapUiSmallMargin">
+                            <Label text="Username" required="true"/>
+                           <Input
+                        id="userInput"
+                        placeholder="Username"
+                        class="sapUiSmallMarginBottom"
+                        width="300px"/>
+
+                        <Label text="Password" required="true"/>
+                    <Input
+                        id="passwordInput"
+                        placeholder="Password"
+                        type="Password"
+                        class="sapUiSmallMarginBottom"
+                        width="300px"/>
+                    <Button
+                        text="Login" 
+                        press="onLoginPress"
+                        class="sapUiSmallMarginBottom"
+                        width="300px"/>
+                                
+                        </VBox>
+                    </content>
+                </Panel>
+            </FlexBox>
+        </Page>
+    </App>
+</mvc:View> -->
+
+
+<mvc:View
+    controllerName="HospitalManagement.controller.Login"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <App>
+        <Page title="Login Page" 
+              showHeader="true"
+              class="loginPage">
+            <FlexBox
+                height="100%"
+                alignItems="Center"
+                justifyContent="Center">
+                <Panel
+                    headerText="Login page" 
+                    width="400px"
+                    class="sapUiResponsiveMargin">
+                    <content>
+                        <VBox class="sapUiSmallMargin">
+                            <Label text="Username" required="true"/>
+                            <Input
+                                id="userInput"
+                                placeholder="Username"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+
+                            <Label text="Password" required="true"/>
+                            <Input
+                                id="passwordInput"
+                                placeholder="Password"
+                                type="Password"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+                            <Button
+                                text="Login" 
+                                press="onLoginPress"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+                        </VBox>
+                    </content>
+                </Panel>
+            </FlexBox>
+        </Page>
+    </App>
+</mvc:View>
+
+<!-- <mvc:View
+    controllerName="HospitalManagement.controller.Login"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+    <App>
+        <Page title="Login Page" showHeader="true">
+            <customData>
+                <core:CustomData 
+                    key="backgroundStyle"
+                    value="background-image: url('https://images.pexels.com/photos/7078666/pexels-photo-7078666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+                           background-repeat: no-repeat;
+                           background-size: cover;
+                           background-position: center center;"
+                    writeToDom="true"/>
+            </customData>
+            <FlexBox
+                height="100%"
+                alignItems="Center"
+                justifyContent="Center">
+                <Panel
+                    headerText="Login page" 
+                    width="400px"
+                    class="sapUiResponsiveMargin">
+                    <content>
+                        <VBox class="sapUiSmallMargin">
+                            <Label text="Username" required="true"/>
+                            <Input
+                                id="userInput"
+                                placeholder="Username"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+
+                            <Label text="Password" required="true"/>
+                            <Input
+                                id="passwordInput"
+                                placeholder="Password"
+                                type="Password"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+                            <Button
+                                text="Login" 
+                                press="onLoginPress"
+                                class="sapUiSmallMarginBottom"
+                                width="300px"/>
+                        </VBox>
+                    </content>
+                </Panel>
+            </FlexBox>
+        </Page>
+    </App>
+</mvc:View> -->

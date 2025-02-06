@@ -1,0 +1,4 @@
+PROCEDURE `CreateEmployee`(IN empName VARCHAR(100), IN empDesignation VARCHAR(100), IN empStatus VARCHAR(50))
+BEGIN
+    INSERT INTO employee (name, designation, status) VALUES (empName, empDesignation, empStatus);
+END

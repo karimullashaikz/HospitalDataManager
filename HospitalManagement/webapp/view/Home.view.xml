@@ -1,0 +1,105 @@
+<!-- <mvc:View controllerName="HospitalManagement.controller.Home"
+     xmlns="sap.m"
+     xmlns:mvc="sap.ui.core.mvc"
+     xmlns:core="sap.ui.core"
+     xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+     xmlns:f="sap.f"
+     xmlns:tnt="sap.tnt"
+     height="100%">
+
+    <Page showHeader="true" enableScrolling="false" titleAlignment="Center">
+        <customHeader>
+            <Bar>
+                   <contentLeft>
+    <Image src="images/13.jpg" width="40px" height="40px" press="onImagePress"/>
+    <Title titleStyle="H5" text="{sideNavigation>/title}" textAlign="Center" visible="{device>/system/desktop}"/>
+</contentLeft>
+ 
+                    
+                </contentLeft>
+                <contentMiddle>
+                </contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://hint" type="Transparent" />
+                    <Button icon="sap-icon://bell" type="Transparent" />
+                    <Avatar initials="A" displaySize="XS" press=".menuPopoverOpen" />
+                    
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <content>
+            <tnt:ToolPage id="toolPage">
+                <tnt:mainContents>
+                    <f:FlexibleColumnLayout id="fcl" stateChange=".onStateChanged" backgroundDesign="Translucent" layout="{/layout}"/>
+                </tnt:mainContents>
+            </tnt:ToolPage>
+        </content>
+
+        <content>
+            <VBox alignItems="right" justifyContent="Center" height="50%">
+                <GenericTile 
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                    header="Hospital Management System"
+                    press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://company-view" class="sapUiTinyMarginBegin"/>
+                    </TileContent>
+                </GenericTile>
+            </VBox>
+        </content>
+        
+    </Page>
+
+</mvc:View> -->
+
+<mvc:View controllerName="HospitalManagement.controller.Home"
+     xmlns:mvc="sap.ui.core.mvc"
+     xmlns:core="sap.ui.core"
+     xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+     xmlns:f="sap.f"
+     xmlns:tnt="sap.tnt"
+     xmlns="sap.m"
+     height="100%">
+
+    <Page showHeader="true" enableScrolling="false" titleAlignment="Center">
+        <customHeader>
+
+            <Bar>
+                <contentLeft>
+                    <Image src="images/13.jpg" height="50px" press="onImagePress"/>
+                    <Title titleStyle="H5" text="{sideNavigation>/title}" textAlign="Center" visible="{device>/system/desktop}"/>
+                </contentLeft>
+                <contentMiddle></contentMiddle>
+                <contentRight>
+                    <Button icon="sap-icon://hint" type="Transparent" />
+                    <Button icon="sap-icon://bell" type="Transparent" />
+                    <Avatar initials="A" displaySize="XS" press=".menuPopoverOpen" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <content>
+       
+                        
+            <VBox alignItems="right" justifyContent="top" height="100%">
+                <tnt:ToolPage id="toolPage">
+                    <tnt:mainContents>
+                        <f:FlexibleColumnLayout id="fcl" stateChange=".onStateChanged" backgroundDesign="Translucent" layout="{/layout}"/>
+                    </tnt:mainContents>
+                </tnt:ToolPage>
+
+                <GenericTile 
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" 
+                    header="Hospital Management System"
+                    press="press">
+                    <TileContent>
+                        <ImageContent src="sap-icon://company-view" class="sapUiTinyMarginBegin"/>
+                    </TileContent>
+                </GenericTile>
+            </VBox>
+        </content>
+
+    </Page>
+
+</mvc:View>

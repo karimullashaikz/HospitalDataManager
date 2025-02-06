@@ -1,0 +1,128 @@
+
+
+
+<mvc:View controllerName="HospitalManagement.view.hosp.hospital"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:fb="sap.ui.comp.filterbar">
+
+    <f:FlexibleColumnLayout id="flexibleColumnLayout"
+        stateChange="onStateChanged"
+        layout="{appView>/layout}"
+        backgroundDesign="Solid">
+        
+        <f:beginColumnPages>
+            <Page showHeader="true" enableScrolling="false" titleAlignment="Center">
+                <customHeader>
+                    <Bar>
+                        <contentLeft>
+                            <Image src="images/13.jpg" width="50px" height="50px" press="onImagePress"/>
+                            <Title titleStyle="H5" text="{sideNavigation>/title}" textAlign="Center" visible="{device>/system/desktop}"/>
+                        </contentLeft>
+                        <contentRight>
+                            <Button icon="sap-icon://hint" type="Transparent"/>
+                            <Button icon="sap-icon://bell" type="Transparent"/>
+                            <Avatar initials="A" displaySize="XS" press="onAvatarPress"/>
+                        </contentRight>
+                    </Bar>
+                </customHeader>
+
+                <f:DynamicPage id="page_MngEmployees" headerExpanded="true">
+                    <f:title>
+                        <f:DynamicPageTitle>
+                            <f:heading>
+                                <Title text="Hospital Management"/>
+                            </f:heading>
+                        </f:DynamicPageTitle>
+                    </f:title>
+
+                    <f:header>
+                        <f:DynamicPageHeader pinnable="true">
+                            <fb:FilterBar id="filterbar" filterBarExpanded="true" 
+                                        search="onSearch" useToolbar="false" 
+                                        showGoOnFB="true" clear="clearAllFilters">
+                                <fb:filterItems>
+                                    <fb:FilterItem name="empId" label="Employee ID">
+                                        <fb:control>
+                                            <Input value="{filters>/empId}"/>
+                                        </fb:control>
+                                    </fb:FilterItem>
+                                    <fb:FilterItem name="empName" label="Employee Name">
+                                        <fb:control>
+                                            <Input value="{filters>/empName}"/>
+                                        </fb:control>
+                                    </fb:FilterItem>
+                                    <fb:FilterItem name="designation" label="Designation">
+                                        <fb:control>
+                                            <Input value="{filters>/designation}"/>
+                                        </fb:control>
+                                    </fb:FilterItem>
+                                    <fb:FilterItem name="status" label="Status">
+                                        <fb:control>
+                                            <Select selectedKey="{filters>/status}"
+                                                    items="{statusModel>/}">
+                                                <core:Item key="{statusModel>key}" text="{statusModel>text}"/>
+                                            </Select>
+                                        </fb:control>
+                                    </fb:FilterItem>
+                                </fb:filterItems>
+                            </fb:FilterBar>
+                        </f:DynamicPageHeader>
+                    </f:header>
+
+                    <f:content>
+                        <Table id="employeesTable"
+                            items="{employees>/}"
+                            mode="SingleSelectMaster"
+                            itemPress="onEmployeePress"
+                            sticky="ColumnHeaders,HeaderToolbar">
+                            
+                            <headerToolbar>
+                                <OverflowToolbar>
+                                    <Title text="Employees ({=${employees>/}.length})" level="H2"/>
+                                    <ToolbarSpacer/>
+                                    <Button text="Create" type="Emphasized" press="onCreateEmployee"/>
+                                </OverflowToolbar>
+                            </headerToolbar>
+
+                            <columns>
+                                <Column>
+                                    <Text text="Employee ID"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Employee Name"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Designation"/>
+                                </Column>
+                                <Column>
+                                    <Text text="Status"/>
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem type="Navigation">
+                                    <cells>
+                                        <ObjectIdentifier title="{employees>id}"/>
+                                        <Text text="{employees>name}"/>
+                                        <Text text="{employees>designation}"/>
+                                        <ObjectStatus text="{path: 'employees>status', formatter: '.formatStatus'}"
+                                                    state="{path: 'employees>status', formatter: '.formatStatusState'}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </f:content>
+                </f:DynamicPage>
+            </Page>
+        </f:beginColumnPages>
+
+        <f:midColumnPages>
+            <mvc:XMLView id="createEmployeeView" viewName="HospitalManagement.view.hosp.CreateEmployee"/>
+        </f:midColumnPages>
+
+        <f:endColumnPages></f:endColumnPages>
+    </f:FlexibleColumnLayout>
+</mvc:View>

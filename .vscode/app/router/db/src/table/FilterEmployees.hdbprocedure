@@ -1,0 +1,14 @@
+CREATE PROCEDURE `FilterEmployees`(
+    IN p_name VARCHAR(255),
+    IN p_designation VARCHAR(255),
+    IN p_status INT
+)
+BEGIN
+    SELECT * FROM employee e
+    WHERE 
+        (p_name IS NULL OR e.name LIKE CONCAT('%', p_name, '%'))
+        AND
+        (p_designation IS NULL OR e.designation LIKE CONCAT('%', p_designation, '%'))
+        AND
+        (p_status IS NULL OR e.status = p_status);
+END

@@ -1,0 +1,4 @@
+ CREATE PROCEDURE `GetEmployeeById`(IN empId INT)
+BEGIN
+    SELECT * FROM employee WHERE id = empId;
+END

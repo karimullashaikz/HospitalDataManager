@@ -1,0 +1,4 @@
+CREATE PROCEDURE `DeleteEmployee`(IN empId INT)
+BEGIN
+    DELETE FROM employee WHERE id = empId;
+END
